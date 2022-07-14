@@ -2,8 +2,15 @@
   text-align: center;
 }
 
-.title {
+.main-title {
   padding: 0 1rem;
+}
+
+.get-container,
+.post-container,
+.put-container,
+.delete-container {
+  padding: 1rem 1rem;
 }
 
 .post-form {

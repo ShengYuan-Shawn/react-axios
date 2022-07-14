@@ -7,9 +7,9 @@ const baseURL = "https://jsonplaceholder.typicode.com/comments";
 
 function App() {
   const [post, setPost] = React.useState(null);
-  const [newName, setNewName] = React.useState("");
-  const [newEmail, setNewEmail] = React.useState("");
-  const [newBody, setNewBody] = React.useState("");
+  const [newName, setNewName] = React.useState();
+  const [newEmail, setNewEmail] = React.useState();
+  const [newBody, setNewBody] = React.useState();
 
   // GET Request
   React.useEffect(() => {
@@ -51,29 +51,34 @@ function App() {
 
   return (
     <div>
-      <h1 className="title">API Request</h1>
+      <h1 className="main-title">API Request</h1>
       <div className="get-container">
         <h2 className="title">Get Request</h2>
+        <label>ID: </label>
+        <input name="ID"></input>
+        <button>Get Details</button>
       </div>
       <div className="post-container">
+        <h2 className="title">Post Request</h2>
         <form className="post-form">
-          <label>Name</label>
-          <input></input>
-          <label>E-mail</label>
-          <input></input>
-          <label>Body</label>
-          <input></input>
+          <label>Name: </label>
+          <input name="Name" placeholder="Name"></input>
+          <br></br>
+          <label>E-mail: </label>
+          <input name="E-mail" placeholder="E-mail"></input>
+          <label>Body: </label>
+          <input name="Body" placeholder="Body"></input>
           <button onClick={createPost}>Create Post</button>
         </form>
       </div>
       <div className="put-container">
+        <h2 className="title">Put Request</h2>
         <button onClick={updatePost}>Update Post</button>
       </div>
-      <div>
+      <div div className="delete-container">
+        <h2 className="title">Delete Request</h2>
         <button onClick={deletePost}>Delete Post</button>
       </div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
     </div>
   );
 }
